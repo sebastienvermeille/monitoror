@@ -11,6 +11,7 @@ import (
 	"github.com/monitoror/monitoror/monitorables/port"
 	"github.com/monitoror/monitoror/monitorables/travisci"
 	"github.com/monitoror/monitoror/store"
+	"github.com/sebastienvermeille/monitoror/monitorables/cirrusci"
 )
 
 func RegisterMonitorables(s *store.Store) {
@@ -32,4 +33,6 @@ func RegisterMonitorables(s *store.Store) {
 	s.Registry.RegisterMonitorable(port.NewMonitorable(s))
 	// ------------ TRAVIS CI ------------
 	s.Registry.RegisterMonitorable(travisci.NewMonitorable(s))
+	// ------------ CIRRUS CI ------------
+	s.Registry.RegisterMonitorable(cirrusci.NewMonitorable(s))
 }
